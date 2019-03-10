@@ -1,0 +1,93 @@
+@mixin _bg-color($color){
+    background-color:$color !important;
+}
+
+.full-vw-bg{
+    &:before{
+        @include shape-rectangle(100vw, $color-grey, 100%);
+        @include position(calc(50% - 50vw), 0);
+        content: '';
+        z-index: -1;
+    }
+}
+
+.circle-bg{
+    position:relative;
+
+    &:after{
+        @include shape-circle(24px, $color-grey-light);
+        @include position(calc(50% - 12px), calc(50% - 12px));
+        content: '';
+        z-index: -1;
+    }    
+}
+
+.text-vive{
+    color: $color-vive !important;
+}
+
+.text-vive{
+    color: $color-vive !important;
+}
+
+.txt-disclaimer{
+    font-size: 0.75rem;
+}
+
+.bg-vive{
+    @include _bg-color($color-vive);
+}
+
+.bg-navy-blue{
+    @include _bg-color($color-navy-blue);
+}
+
+.bg-dark{
+    @include _bg-color($color-dark);
+}
+.bg-dark-light{
+    @include _bg-color($color-dark-light);
+}
+.bg-dark-light-100{
+    @include _bg-color($color-grey-light-100);
+}
+.bg-light-100{
+    @include _bg-color($color-light-100);
+}
+.bg-light-grey{
+    @include _bg-color($color-light-grey);
+}
+
+.bg-cover{
+    @include bg-setting(cover);
+}
+
+.half-bg-light{
+    &:before{
+        @include shape-rectangle(100vw, $color-light-100, 50%);
+        @include position(calc(50% - 50vw), 50%);
+        content: '';
+    }
+}
+
+.product-notice-message{
+    .error-block,
+    .outofstock-block{
+        display: none;
+    }
+}
+
+.no-list-style{
+    padding: 0;
+    list-style: none;
+}
+
+@include media-breakpoint-up(lg) {
+    .half-bg-light{
+        &:before{
+            @include shape-rectangle(50vw, $color-light-100, 100%);
+            @include position(50%, 0);
+            content: '';
+        }
+    }
+}

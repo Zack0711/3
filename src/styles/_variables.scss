@@ -1,0 +1,46 @@
+// Font
+$font-default: "Oscine-Regular", "Fakt-Normal", "SF Pro Text", "SF Pro Icons", Helvetica, Arial;
+$font-tw: $font-default, "微軟正黑體", "Microsoft JhengHei";
+$font-cn: $font-default, "微软雅黑體", "Microsoft YaHei";
+$font-jp: $font-default, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック';
+
+$font-base-size: 10px;
+
+// Color
+$color-white: #fff;
+$color-vive: #00b5e2;
+$color-vive-light: #00c9fb;
+$color-dark: #111820;
+$color-dark-light: #41464d;
+$color-navy-blue: #223046;
+$color-dark-rgb: rgb(17,24,32);
+
+$color-grey: #41464d;
+$color-grey-light: #5b5b5b;
+$color-grey-light-100: #666;
+
+$color-light: #ededed;
+$color-light-100:#eee;
+
+$color-light-200:#a7a7a7;
+$color-light-grey: #dbdee2;
+
+$color-grass-green: #a2dbb8;
+$color-lake-green: #50aec0;
+
+$site-font-base-color: $color-grey-light-100;
+
+// Alpha
+$color-alpha: 0.7;
+$disabled-alpha: 0.5;
+
+// Images path
+$logo-vive: '../images/logo-vive.png';
+$logo-vivex: '../images/logo-vivex.png';
+$logo-developer: '../images/logo-developer.png';
+
+$icon-globe: '../images/icon-globe.svg';
+$icon-vive: '../images/icon-vive.png';
+$icon-cart: '../images/icon-cart.png';
+$icon-cart-full: '../images/icon-cart-full.png';
+$icon-avatar: '../images/icon-avatar.png';

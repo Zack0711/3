@@ -1,0 +1,122 @@
+@import "_custom.scss";
+@import "~bootstrap/scss/bootstrap";
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+@import "_variables.scss";
+@import "_mixins.scss";
+
+//@import "_utilities.scss";
+
+@import "_basic.scss";
+//@import "_sections.scss";
+//@import "_footer.scss";
+
+.btn{
+  opacity: 0.5;
+  border: 1px solid transparent;
+
+  &:hover{
+    opacity: 0.8;
+  }
+
+  &.btn-selected{
+    border-color: #666;
+    opacity: 1;
+  }
+
+  &.btn-active{
+    opacity: 0.8;
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+.svg-container{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border:1px solid #999;
+  width: 256px;
+  height: 256px;
+
+  .control-panel{
+    position: absolute;
+    top: 256px;
+  }
+  .icon-menu{
+    position: absolute;
+    left: 256px;    
+  }
+}
+
+.canvas-container{
+  position: absolute;
+  top: 10px;
+  left: 260px;
+  border:1px solid #999;
+  width: 240px;
+  height: 360px;
+}
+
+.png-container{
+  position: absolute;
+  top: 10px;
+  left: 520px;
+  border:1px solid #999;
+  width: 240px;
+  height: 360px;
+}
+
+.ipone-color-plate{
+  position: absolute;
+  right: 0;
+  top: 0
+}
+
+.btn{
+  &.btn-fill-color,
+  &.btn-color {
+    i{
+      opacity: 0;
+    }    
+  }
+}
+
+.btn-red{
+  background-color: #b0283c;
+}
+.btn-pink{  
+  background-color: #f0cdc9;
+}
+.btn-gold{
+  background-color: #efd7c1;
+}
+.btn-sliver{
+  background-color: #d2d2d2;
+}
+.btn-blue{
+  background-color: #4473b5;
+}
+.btn-black{
+  background-color: #333333;  
+}
+
+.btn-white{
+  background-color: #fff;
+}
+
+.btn-grey{
+  background-color: #777777;
+}
+
+.btn-dark{
+  background-color: #333;
+}
+
+.btn-green{
+  background-color: #60be86;
+}

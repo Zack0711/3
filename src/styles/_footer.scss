@@ -1,0 +1,13 @@
+footer{
+  font-size: 1.6rem;
+  color: #999;
+
+  a{
+    &:link,
+    &:visited{
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}

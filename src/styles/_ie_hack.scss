@@ -1,0 +1,104 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .layout-2column-article {
+
+        >div{
+            >.center-column{
+                >.row{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .layout-flex-article{
+        >div{
+            >.center-column{
+                >.d-flex{
+                    width: 100%;
+                }
+
+                .main-text-content{
+                    min-height: 64vh;
+                }
+            }
+        }
+
+        .enterprise-landing-section-3{
+            >.center-column{
+                >.d-flex{
+                    flex-wrap: wrap !important;
+                    flex-direction: row !important;
+                }
+            }
+        }
+
+        .enterprise-sp-section-hero{
+            figure{
+                &.top-figure{
+                    min-height: 80px;
+                    height: 10vw;
+                }
+            }
+        }
+    }
+
+    .layout-flex-column{
+        .enterprise-landing-section-4{
+            figure{
+                &.bottom-figure{
+                    height: 36vw;
+                }
+            }
+        }
+    }
+
+    .layout-contact-map{
+        .center-column{
+            ul,
+            li,
+            figure{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 991.999px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .layout-flex-column{
+        .enterprise-landing-section-4{
+            figure{
+                &.bottom-figure{
+                    height: 80vw;
+                }
+            }
+        }
+    }
+
+    .layout-2column-article{
+        .row{
+            &.flex-column,
+            &.flex-column-reverse{
+                flex-direction: row !important;
+            }
+
+            &.flex-column-reverse{
+                >div{
+                    order: 1;
+
+                    &:first-child{
+                        order: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    .layout-text-article{
+        .enterprise-sp-section-table{
+            >.center-column{
+                width: 100%;
+            }
+        }
+    }
+
+}
