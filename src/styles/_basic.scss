@@ -35,19 +35,17 @@
 }
 
 html{
-  font-size: $font-base-size;
+  font-size: 10px;
 }
 
 body{
   text-align: initial;
-  color: $site-font-base-color;
   min-height: 100vh;
 }
 
 a{
   &:link,
   &:visited{
-    color: $site-font-base-color;
     text-decoration: underline;
   }
 
@@ -70,11 +68,6 @@ a{
   }
 }
 
-.text-logo{
-  font-weight: 300;
-  font-size: 7.5rem;
-}
-
 h3{
   color: #50aec0;
 }
@@ -88,65 +81,15 @@ canvas {
   opacity:0.8;
 }
 
-header{
-  .container{
-    border-bottom: 1px solid $color-light-200;    
-  }
-}
-
-form{
-
-  font-size: 1.6rem;
-
-  .form-control{
-    font-size: 1.6rem;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 1px solid $color-light-200;
-    background: transparent;  
-  }
-
-  .form-select{
-    @include _select-btn-basic-setting();
-
-    &.is-invalid{
-      border-color: red;
-    }
-
-  }
-  .form-check{
-    input,
-    label{
-      display: inline;
-    }
-
-    label{
-      padding-left: 0rem;
-    }
-  }
-
-  &.is-subscribed{
-    .form-group{
-      opacity: 0.5;
-    }
-  }
-
-  #mce-success-response{
-    color: #28a745;
-  }
-
-  #mce-error-response{
-    color: #dc3545;
-  }
-}
-
 .modal{
+
   .modal-open &{
     background-color: rgba(0,0,0,0.5);
   }
 
   &.show{
-    display: block;
+    display: flex;
+    align-items: center;
   }
 
   .modal-dialog{

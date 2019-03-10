@@ -1,10 +1,14 @@
-import './styles/main.scss';
+import * as d3 from 'd3';
+import 'd3-selection-multi';
 
+import './styles/main.scss';
 import './utilities/requestAnimationFramePolyfill'
 
 import {
   getSVGString,
 } from './utilities/other'
+
+const webGLContainer = document.querySelector('.webgl-container')
 
 const dragstarted = function(d) {
   d3.select(this).raise().classed('active', true);
@@ -156,8 +160,8 @@ const renderer = new THREE.WebGLRenderer({alpha: true})
 
 const controls = new THREE.OrbitControls( camera, renderer.domElement );
 
-const light1 = new THREE.PointLight( 0xFFFFFF , 1);
-const light2 = new THREE.PointLight( 0xFFFFFF , 1);
+const light1 = new THREE.PointLight( 0xFFFFFF , 0.8);
+const light2 = new THREE.PointLight( 0xFFFFFF , 0.8);
 let ambientLight = new THREE.AmbientLight('#0c0c0c')
 
 
@@ -259,7 +263,7 @@ surfaceMesh.position.set(0,0,-0.50)
 surfaceMesh.rotation.y += Math.PI
 
 scene.add(surfaceMesh)
-scene.background = new THREE.Color( 0xAAAA99 );
+scene.background = new THREE.Color( 0xDDDDCD );
 scene.add(ambientLight)
 scene.add(light1)
 scene.add(light2)
@@ -270,10 +274,17 @@ const updateMaterialTexture = () => {
   surfaceMesh.material = new THREE.MeshBasicMaterial( { map: imgTexture, transparent:true} )  
 }
 
-document.querySelector('.webgl-container').appendChild(renderer.domElement)
+webGLContainer.appendChild(renderer.domElement)
 
 const reSize = () => {
-  renderer.setSize(window.innerWidth, window.innerHeight)
+  const {
+    width,
+    height,
+  } = webGLContainer.getBoundingClientRect();
+
+  renderer.setSize(width, height)
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();  
 }
 
 const render = () => {
@@ -307,4 +318,4 @@ reSize()
 render();
 animatesRender();
 
-window.addEventListener( 'resize', reSize, false );
+window.addEventListener('resize', e => { reSize();});
