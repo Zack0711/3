@@ -47,7 +47,7 @@ module.exports = (env, argv) => {
       app: './index.js'
     },
     output: {
-      path: `${__dirname}/`,
+      path: `${__dirname}/public`,
       filename: 'js/[name].js?[hash]'
     },
     module: {

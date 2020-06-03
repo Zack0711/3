@@ -1,5 +1,6 @@
 node_modules/
 coverage/
+public/
 __snapshots__/
 source_files/
 .cache
