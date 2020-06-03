@@ -1,0 +1,44 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Auto Build
+
+on:
+  push:
+    paths:
+      - .github/workflows/auto-build.yml
+      - src/**
+      - yarn.lock
+  repository_dispatch:
+
+jobs:
+  build:
+    name: Deploy
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.16
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: yarn install
+      - name: Run deploy
+        run: yarn run build
+      - uses: actions/upload-artifact@v1
+        if: success()
+        with:
+          name: 3d-case-editor-auto-build
+          path: public
+
