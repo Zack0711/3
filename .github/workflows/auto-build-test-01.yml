@@ -4,12 +4,7 @@
 name: Auto Build Test
 
 on:
-  push:
-    paths:
-      - .github/workflows/auto-build-1.yml
-      - src/**
-      - yarn.lock
-  repository_dispatch:
+  workflow_dispatch:
 
 jobs:
   build:
